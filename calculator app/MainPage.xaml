@@ -177,7 +177,7 @@
                 Grid.Column="2"
                 Grid.ColumnSpan="1"
                 BackgroundColor="Gray"
-                Clicked="OnNumSelect"
+                Clicked="OnPointSelect"
                 CornerRadius="0"
                 FontSize="30"
                 Text="."

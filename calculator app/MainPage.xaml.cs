@@ -42,7 +42,8 @@
             double number;
             if (double.TryParse(this.result.Text, out number))
             {
-                this.result.Text = number.ToString("N0");
+                this.result.Text = number.ToString("G"); // "G" format specifier maintains decimal places
+
                 if (currentState == 1)
                 {
                     firstNum = number;
@@ -51,6 +52,20 @@
                 {
                     secondNum = number;
                 }
+            }
+        }
+
+        void OnPointSelect(object sender, EventArgs e)
+        {
+            if (currentState < 0)
+            {
+                this.result.Text = "0.";
+                currentState = 1;
+            }
+            else
+            {
+                if (!this.result.Text.Contains("."))
+                    this.result.Text = this.result.Text + ".";
             }
         }
 
